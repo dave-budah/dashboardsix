@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Title</title>
+    <meta name="description" content="A simple theme toggle template.">
+    <meta name="author" content="SitePoint">
+
+    <meta property="og:title" content="A simple theme toggle template.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.selvigtech.com">
+    <meta property="og:description" content="A simple theme toggle template.">
+    <meta property="og:image" content="image.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css" integrity="sha512-5PV92qsds/16vyYIJo3T/As4m2d8b6oWYfoqV+vtizRB6KhF1F9kYzWzQmsO6T3z3QG2Xdhrx7FQ+5R1LiQdUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="main.js" defer></script>
+</head>
+<body>
+<nav>
+    <div class="sidebar-top">
+        <span class="shrink-btn">
+            <i class="bi bi-chevron-left"></i>
+        </span>
+        <img src="assets/images/logo.png" alt="" class="logo">
+        <h3 class="hide">Selvigtech</h3>
+        <span class="theme-toggler hide" role="switch" aria-label="light/dark mode"></span>
+        <audio src="audio/click.mp3" class="audio_click"></audio>
+    </div>
+<!--    Search Field -->
+    <div class="search">
+        <i class="bi bi-search"></i>
+        <input type="search" class="hide" placeholder="Search..." autocomplete="off">
+    </div>
+
+<!--    Page links -->
+    <div class="sidebar-links">
+        <ul>
+            <div class="active-tab"></div>
+            <li class="tooltip-element" data-tooltip="0">
+                <a href="#" class="active" data-active="0">
+                    <div class="icon">
+                        <i class="bi bi-speedometer2"></i>
+                    </div>
+                    <span class="link hide">
+                        Dashboard
+                    </span>
+                </a>
+            </li>
+            <li class="tooltip-element" data-tooltip="1">
+                <a href="#" data-active="1">
+                    <div class="icon">
+                        <i class="bi bi-chat"></i>
+                    </div>
+                    <span class="link hide">
+                        Blog Posts
+                    </span>
+                </a>
+            </li>
+            <li class="tooltip-element" data-tooltip="2">
+                <a href="#" data-active="2">
+                    <div class="icon">
+                        <i class="bi bi-chat-left-dots"></i>
+                    </div>
+                    <span class="link hide">
+                        Comments
+                    </span>
+                </a>
+            </li>
+            <li class="tooltip-element" data-tooltip="3">
+                <a href="#" data-active="3">
+                    <div class="icon">
+                        <i class="bi bi-people"></i>
+                    </div>
+                    <span class="link hide">
+                        Users
+                    </span>
+                </a>
+            </li>
+            <li class="tooltip-element" data-tooltip="4">
+                <a href="#" data-active="4">
+                    <div class="icon">
+                        <i class="bi bi-card-image"></i>
+                    </div>
+                    <span class="link hide">
+                        Banners
+                    </span>
+                </a>
+            </li>
+            <div class="tooltip">
+                <span class="show">Dashboard</span>
+                <span>Blog Posts</span>
+                <span>Comments</span>
+                <span>Users</span>
+                <span>Banners</span>
+            </div>
+        </ul>
+        <h4 class="hide">Shortcuts</h4>
+        <ul>
+            <li data-tooltip="0" class="tooltip-element">
+                <a href="#" data-active="5">
+                    <div class="icon">
+                        <i class="bi bi-bell"></i>
+                    </div>
+                    <span class="link hide">
+                        Notifications
+                    </span>
+                </a>
+            </li>
+            <li data-tooltip="1" class="tooltip-element">
+                <a href="#" data-active="6">
+                    <div class="icon">
+                        <i class="bi bi-envelope"></i>
+                    </div>
+                    <span class="link hide">
+                        Messages
+                    </span>
+                </a>
+            </li>
+            <li data-tooltip="2" class="tooltip-element">
+                <a href="#" data-active="7">
+                    <div class="icon">
+                        <i class="bi bi-clipboard-check"></i>
+                    </div>
+                    <span class="link hide">
+                        Todo
+                    </span>
+                </a>
+            </li>
+            <li data-tooltip="3" class="tooltip-element">
+                <a href="#" data-active="8">
+                    <div class="icon">
+                        <i class="bi bi-info-circle"></i>
+                    </div>
+                    <span class="link hide">
+                        Help
+                    </span>
+                </a>
+            </li>
+            <div class="tooltip">
+                <span class="show">Notifications</span>
+                <span>Messages</span>
+                <span>Todo</span>
+                <span>Help</span>
+            </div>
+        </ul>
+    </div>
+
+    <div class="sidebar-footer">
+        <a href="#" class="account tooltip-element" data-tooltip="0">
+            <i class="bi bi-person"></i>
+        </a>
+        <div data-tooltip="1" class="admin-user tooltip-element">
+            <div class="admin-profile hide">
+                <img src="assets/images/lion.jpg" alt="">
+                <div class="admin-info">
+                    <h3>Shumba</h3>
+                    <h5>Admin</h5>
+                </div>
+            </div>
+            <a href="#" class="logout">
+                <i class="bi bi-box-arrow-right"></i>
+            </a>
+        </div>
+        <div class="tooltip">
+            <span class="show">Shumba</span>
+            <span>Logout</span>
+        </div>
+    </div>
+</nav>
+<main>
+    <div class="content">
+       <div class="navbar">
+           <div class="breadcrumbs">
+               <a href="#">Pages</a> <i class="bi bi-chevron-right"></i> <a href="#" class="active-link">Dashboard</a>
+           </div>
+           <div class="topbar-links">
+               <a href="#" class="username">
+                   <i class="bi bi-person"></i>
+                   <span>Hi, Shumba</span>
+               </a>
+               <a href="#" class="notifications">
+                   <i class="bi bi-bell"></i>
+               </a>
+               <a href="#" class="messages">
+                   <i class="bi bi-envelope"></i>
+               </a>
+           </div>
+       </div>
+
+<!--        Pages -->
+        <div class="wrapper">
+           <div class="analytics">
+               <div class="card posts analytics-card">
+                   <div class="floating-box">
+                       <i class="bi bi-chat"></i>
+                   </div>
+                   <div class="card-title">
+                       <h5>Posts</h5>
+                       <h3>0000</h3>
+                   </div>
+                   <hr>
+                   <div class="card-footer">
+                       <p>04 Sep 2022</p>
+                   </div>
+               </div>
+               <div class="card people analytics-card">
+                   <div class="floating-box">
+                       <i class="bi bi-people"></i>
+                   </div>
+                   <div class="card-title">
+                       <h5>Users</h5>
+                       <h3>0000</h3>
+                   </div>
+                   <hr>
+                   <div class="card-footer">
+                       <p>04 Sep 2022</p>
+                   </div>
+               </div>
+               <div class="card comments analytics-card">
+                   <div class="floating-box">
+                       <i class="bi bi-chat-left-quote"></i>
+                   </div>
+                   <div class="card-title">
+                       <h5>Comments</h5>
+                       <h3>0000</h3>
+                   </div>
+                   <hr>
+                   <div class="card-footer">
+                       <p>04 Sep 2022</p>
+                   </div>
+               </div>
+               <div class="card visits analytics-card">
+                   <div class="floating-box">
+                       <i class="bi bi-eye"></i>
+                   </div>
+                   <div class="card-title">
+                       <h5>Site visits</h5>
+                       <h3>0000</h3>
+                   </div>
+                   <hr>
+                   <div class="card-footer">
+                       <p>04 Sep 2022</p>
+                   </div>
+               </div>
+           </div>
+
+            <div class="table-cards">
+                <div class="card card-table">
+                    <div class="floating-box">
+                        <h5>Admins</h5>
+                    </div>
+
+                    <ul class="responsive-table">
+                        <li class="table-header">
+                            <div class="col col-1">Image</div>
+                            <div class="col col-2">Admin Name</div>
+                            <div class="col col-3">Role</div>
+                            <div class="col col-4">Status</div>
+                        </li>
+                        <li class="table-row">
+                            <div class="col col-1" data-label="Job Id">
+                                <img src="assets/images/lion.jpg" alt="">
+                            </div>
+                            <div class="col col-2" data-label="Customer Name">John Doe</div>
+                            <div class="col col-3" data-label="Amount">SuperAdmin</div>
+                            <div class="col col-4" data-label="Payment Status">Active</div>
+                        </li>
+                        <li class="table-row">
+                            <div class="col col-1" data-label="Job Id">
+                                <img src="assets/images/lion.jpg" alt="">
+                            </div>
+                            <div class="col col-2" data-label="Customer Name">Jennifer Smith</div>
+                            <div class="col col-3" data-label="Amount">Author</div>
+                            <div class="col col-4" data-label="Payment Status">Offline</div>
+                        </li>
+                        <li class="table-row">
+                            <div class="col col-1" data-label="Job Id">
+                                <img src="assets/images/lion.jpg" alt="">
+                            </div>
+                            <div class="col col-2" data-label="Customer Name">John Smith</div>
+                            <div class="col col-3" data-label="Amount">Moderator</div>
+                            <div class="col col-4" data-label="Payment Status">Active</div>
+                        </li>
+                        <li class="table-row">
+                            <div class="col col-1" data-label="Job Id">
+                                <img src="assets/images/lion.jpg" alt="">
+                            </div>
+                            <div class="col col-2" data-label="Customer Name">John Carpenter</div>
+                            <div class="col col-3" data-label="Amount">Manager</div>
+                            <div class="col col-4" data-label="Payment Status">Offline</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card card-table">
+                    <div class="floating-box">
+                        <h5>Posts</h5>
+                    </div>
+
+                    <ul class="responsive-table">
+                        <li class="table-header">
+                            <div class="col col-1">Image</div>
+                            <div class="col col-2">Title</div>
+                            <div class="col col-3">Nugget</div>
+                            <div class="col col-4">Status</div>
+                        </li>
+                        <li class="table-row">
+                            <div class="col col-1" data-label="Job Id">
+                                <img src="assets/images/lion.jpg" alt="">
+                            </div>
+                            <div class="col col-2" data-label="Customer Name">Lorem ipsum dolor sit.</div>
+                            <div class="col col-3" data-label="Amount">orem ipsum dolor sit.</div>
+                            <div class="col col-4" data-label="Payment Status">Published</div>
+                        </li>
+                        <li class="table-row">
+                            <div class="col col-1" data-label="Job Id">
+                                <img src="assets/images/lion.jpg" alt="">
+                            </div>
+                            <div class="col col-2" data-label="Customer Name">Lorem ipsum dolor sit.</div>
+                            <div class="col col-3" data-label="Amount">Lorem ipsum dolor sit.</div>
+                            <div class="col col-4" data-label="Payment Status">Draft</div>
+                        </li>
+                        <li class="table-row">
+                            <div class="col col-1" data-label="Job Id">
+                                <img src="assets/images/lion.jpg" alt="">
+                            </div>
+                            <div class="col col-2" data-label="Customer Name">Lorem ipsum dolor sit.</div>
+                            <div class="col col-3" data-label="Amount">Lorem ipsum dolor sit.</div>
+                            <div class="col col-4" data-label="Payment Status">Unpublished</div>
+                        </li>
+                        <li class="table-row">
+                            <div class="col col-1" data-label="Job Id">
+                                <img src="assets/images/lion.jpg" alt="">
+                            </div>
+                            <div class="col col-2" data-label="Customer Name">Lorem ipsum dolor sit.</div>
+                            <div class="col col-3" data-label="Amount">Lorem ipsum dolor sit.</div>
+                            <div class="col col-4" data-label="Payment Status">Published</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</main>
+
+</body>
+</html>
