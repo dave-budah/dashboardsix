@@ -180,10 +180,41 @@
                <a href="#">Pages</a> <i class="bi bi-chevron-right"></i> <a href="#" class="active-link">Dashboard</a>
            </div>
            <div class="topbar-links">
-               <a href="#" class="username">
+               <a class="username" onclick="toggleMenu()">
                    <i class="bi bi-person"></i>
                    <span>Hi, Shumba</span>
                </a>
+<!--               Dropdown menu -->
+               <div class="sub-menu-wrap" id="dropdownMenu">
+                   <div class="sub-menu">
+                       <div class="user-info">
+                           <img src="assets/images/lion.jpg" alt="avatar">
+                           <h5>Shumba Murambwi</h5>
+                       </div>
+                       <hr>
+                       <a href="#" class="sub-menu-link">
+                           <span><i class="bi bi-person"></i></span>
+                           <p>View profile</p>
+                           <span><i class="bi bi-chevron-right"></i></span>
+                       </a>
+                       <a href="#" class="sub-menu-link">
+                           <span><i class="bi bi-envelope"></i></span>
+                           <p>Messages</p>
+                           <span><i class="bi bi-chevron-right"></i></span>
+                       </a>
+                       <a href="#" class="sub-menu-link">
+                           <span><i class="bi bi-gear"></i></span>
+                           <p>Settings</p>
+                           <span><i class="bi bi-chevron-right"></i></span>
+                       </a>
+                       <a href="#" class="sub-menu-link">
+                           <span><i class="bi bi-box-arrow-right"></i></span>
+                           <p>Logout</p>
+                           <span><i class="bi bi-chevron-right"></i></span>
+                       </a>
+                   </div>
+               </div>
+<!--               Dropdown menu -->
                <a href="#" class="notifications">
                    <i class="bi bi-bell"></i>
                </a>
@@ -261,7 +292,7 @@
                             <div class="col col-1">Image</div>
                             <div class="col col-2">Admin Name</div>
                             <div class="col col-3">Role</div>
-                            <div class="col col-4">Status</div>
+                            <div class="col col-4"><span>Status</span></div>
                         </li>
                         <li class="table-row">
                             <div class="col col-1" data-label="Job Id">
@@ -269,7 +300,7 @@
                             </div>
                             <div class="col col-2" data-label="Customer Name">John Doe</div>
                             <div class="col col-3" data-label="Amount">SuperAdmin</div>
-                            <div class="col col-4" data-label="Payment Status">Active</div>
+                            <div class="col col-4 active-status" data-label="Payment Status"><span>Active</span></div>
                         </li>
                         <li class="table-row">
                             <div class="col col-1" data-label="Job Id">
@@ -277,7 +308,7 @@
                             </div>
                             <div class="col col-2" data-label="Customer Name">Jennifer Smith</div>
                             <div class="col col-3" data-label="Amount">Author</div>
-                            <div class="col col-4" data-label="Payment Status">Offline</div>
+                            <div class="col col-4 offline-state" data-label="Payment Status"><span>Offline</span></div>
                         </li>
                         <li class="table-row">
                             <div class="col col-1" data-label="Job Id">
@@ -285,7 +316,7 @@
                             </div>
                             <div class="col col-2" data-label="Customer Name">John Smith</div>
                             <div class="col col-3" data-label="Amount">Moderator</div>
-                            <div class="col col-4" data-label="Payment Status">Active</div>
+                            <div class="col col-4 active-status" data-label="Payment Status"><span>Active</span></div>
                         </li>
                         <li class="table-row">
                             <div class="col col-1" data-label="Job Id">
@@ -293,7 +324,7 @@
                             </div>
                             <div class="col col-2" data-label="Customer Name">John Carpenter</div>
                             <div class="col col-3" data-label="Amount">Manager</div>
-                            <div class="col col-4" data-label="Payment Status">Offline</div>
+                            <div class="col col-4 offline-state" data-label="Payment Status"><span>Offline</span></div>
                         </li>
                     </ul>
                 </div>
@@ -315,7 +346,7 @@
                             </div>
                             <div class="col col-2" data-label="Customer Name">Lorem ipsum dolor sit.</div>
                             <div class="col col-3" data-label="Amount">orem ipsum dolor sit.</div>
-                            <div class="col col-4" data-label="Payment Status">Published</div>
+                            <div class="col col-4 active-status" data-label="Payment Status"><span>Published</span></div>
                         </li>
                         <li class="table-row">
                             <div class="col col-1" data-label="Job Id">
@@ -323,7 +354,7 @@
                             </div>
                             <div class="col col-2" data-label="Customer Name">Lorem ipsum dolor sit.</div>
                             <div class="col col-3" data-label="Amount">Lorem ipsum dolor sit.</div>
-                            <div class="col col-4" data-label="Payment Status">Draft</div>
+                            <div class="col col-4 draft-state" data-label="Payment Status"><span>Draft</span></div>
                         </li>
                         <li class="table-row">
                             <div class="col col-1" data-label="Job Id">
@@ -331,7 +362,7 @@
                             </div>
                             <div class="col col-2" data-label="Customer Name">Lorem ipsum dolor sit.</div>
                             <div class="col col-3" data-label="Amount">Lorem ipsum dolor sit.</div>
-                            <div class="col col-4" data-label="Payment Status">Unpublished</div>
+                            <div class="col col-4 offline-state" data-label="Payment Status"><span>Unpublished</span></div>
                         </li>
                         <li class="table-row">
                             <div class="col col-1" data-label="Job Id">
@@ -339,16 +370,13 @@
                             </div>
                             <div class="col col-2" data-label="Customer Name">Lorem ipsum dolor sit.</div>
                             <div class="col col-3" data-label="Amount">Lorem ipsum dolor sit.</div>
-                            <div class="col col-4" data-label="Payment Status">Published</div>
+                            <div class="col col-4 active-status" data-label="Payment Status"><span>Published</span></div>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-
-
     </div>
 </main>
-
 </body>
 </html>

@@ -94,3 +94,11 @@ function showTooltip() {
 tooltip_elements.forEach((elem) => {
     elem.addEventListener('mouseover', showTooltip);
 })
+
+// Show hide menu
+let subMenu = document.getElementById("dropdownMenu");
+
+function toggleMenu() {
+    console.log('click')
+    subMenu.classList.toggle("open-menu");
+}
